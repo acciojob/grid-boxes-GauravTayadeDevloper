@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* grid container */
+      #grid {
+        display: grid;
+
+        grid-template-columns: 242.5px 242.5px 242.5px 242.5px;
+        grid-template-rows: 124px 124px 124px 124px 124px;
+
+        gap: 10px 10px;
+
+        grid-template-areas: 
+          "box1  box1  box1  box1"
+          "box2  box3  box4  box4"
+          "box2  box5  box5  box6"
+          "box2  box7  box8  box9"
+          "box10 box10 box10 box10";
+      }
+
+      /* assign areas */
+      .box1  { grid-area: box1; }
+      .box2  { grid-area: box2; }
+      .box3  { grid-area: box3; }
+      .box4  { grid-area: box4; }
+      .box5  { grid-area: box5; }
+      .box6  { grid-area: box6; }
+      .box7  { grid-area: box7; }
+      .box8  { grid-area: box8; }
+      .box9  { grid-area: box9; }
+      .box10 { grid-area: box10; }
+
+      /* common styling */
+      .box1, .box2, .box3, .box4, .box5,
+      .box6, .box7, .box8, .box9, .box10 {
+        background: green;
+      }
+    </style>
   </head>
 
-  <body>
-    <body id="grid">
-      <div class="box1">1</div>
-      <div class="box2">2</div>
-      <div class="box3">3</div>
-      <div class="box4">4</div>
-      <div class="box5">5</div>
-      <div class="box6">6</div>
-      <div class="box7">7</div>
-      <div class="box8">8</div>
-      <div class="box9">9</div>
-      <div class="box10">10</div>
-    </body>
+  <body id="grid">
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">4</div>
+    <div class="box5">5</div>
+    <div class="box6">6</div>
+    <div class="box7">7</div>
+    <div class="box8">8</div>
+    <div class="box9">9</div>
+    <div class="box10">10</div>
+
     <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>
