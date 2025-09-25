@@ -1,9 +1,17 @@
 #grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 124px); /* exactly 5 rows */
-  grid-gap: 10px 10px;                  /* Cypress checks for grid-gap */
+  grid-template-columns: 242.5px 242.5px 242.5px 242.5px;
+  grid-template-rows: 124px 124px 124px 124px 124px;
+  grid-gap: 10px 10px;
   padding: 10px;
+
+
+  grid-template-areas:
+    "one one one one"
+    "two three four four"
+    "two five five six"
+    "two seven eight nine"
+    "two ten ten ten";
 }
 
 #grid > div {
@@ -15,14 +23,14 @@
   align-items: center;
 }
 
-/* Item placements */
-#grid > div:nth-child(1) { grid-column: span 4 / auto; }
-#grid > div:nth-child(2) { grid-row: span 4 / auto; }
-#grid > div:nth-child(3) { grid-column: span 2 / auto; }
-#grid > div:nth-child(4) { grid-column: span 2 / auto; }
-#grid > div:nth-child(5) { grid-column: span 2 / auto; }
-#grid > div:nth-child(6) { grid-column: span 1 / auto; }
-#grid > div:nth-child(7) { grid-column: span 1 / auto; }
-#grid > div:nth-child(8) { grid-column: span 1 / auto; }
-#grid > div:nth-child(9) { grid-column: span 1 / auto; }
-#grid > div:nth-child(10) { grid-column: span 3 / auto; grid-row: 5; } /* pin to row 5 */
+/* Assigning each box to its area */
+#grid > div:nth-child(1)  { grid-area: one; }
+#grid > div:nth-child(2)  { grid-area: two; }
+#grid > div:nth-child(3)  { grid-area: three; }
+#grid > div:nth-child(4)  { grid-area: four; }
+#grid > div:nth-child(5)  { grid-area: five; }
+#grid > div:nth-child(6)  { grid-area: six; }
+#grid > div:nth-child(7)  { grid-area: seven; }
+#grid > div:nth-child(8)  { grid-area: eight; }
+#grid > div:nth-child(9)  { grid-area: nine; }
+#grid > div:nth-child(10) { grid-area: ten; }
