@@ -1,13 +1,21 @@
 #grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 124px);   /* exactly 5 rows */
-  grid-gap: 10px 10px;
+  grid-template-rows: repeat(5, 124px); /* exactly 5 rows */
+  grid-gap: 10px 10px;                  /* Cypress checks for grid-gap */
   padding: 10px;
-  height: auto;            /* avoid forcing extra row */
-  box-sizing: border-box;  /* keep spacing consistent */
 }
 
+#grid > div {
+  background-color: #2e7d32;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Item placements */
 #grid > div:nth-child(1) { grid-column: span 4 / auto; }
 #grid > div:nth-child(2) { grid-row: span 4 / auto; }
 #grid > div:nth-child(3) { grid-column: span 2 / auto; }
@@ -17,4 +25,4 @@
 #grid > div:nth-child(7) { grid-column: span 1 / auto; }
 #grid > div:nth-child(8) { grid-column: span 1 / auto; }
 #grid > div:nth-child(9) { grid-column: span 1 / auto; }
-#grid > div:nth-child(10) { grid-column: span 3 / auto; grid-row: 5; } /* force onto row 5 */
+#grid > div:nth-child(10) { grid-column: span 3 / auto; grid-row: 5; } /* pin to row 5 */
